@@ -1,14 +1,14 @@
-import java.util.Date;
+
 
 @PersistenceCapable
-public class Kierowca extends Pracownik{
+public class Kierowca extends Pracownik {
 
     @PrimaryKey
     @Persistynt(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Key key;
 
     @Persistent
-    private Set[String] kategorie;
+    private Set[] kategorie;
 
     @Override
     public Key getKey() {
@@ -31,15 +31,19 @@ public class Kierowca extends Pracownik{
     private Boolean Status;
 
 
-    public Kontroler(String Imie, String Nazwisko, Date DataUrodzenia, Date DataZatrudnienia,Set[String] kategorie,Boolean stattus) {
+    public Kontroler(String Imie, String Nazwisko, Date DataUrodzenia, Date DataZatrudnienia, Set[String]kategorie, Boolean stattus) {
         this.Imie = Imie;
         this.Nazwisko = Nazwisko;
         this.DataUrodzenia = DataUrodzenia;
         this.DataZatrudnienia = DataZatrudnienia;
-        this.kategorie=kategorie;
-        this.Status=stattus;
+        this.kategorie = kategorie;
+        this.Status = stattus;
     }
 
+
+    public Set[] getKategorieKierowcy() {
+        return this.kategorie;
+    }
 
 
 }

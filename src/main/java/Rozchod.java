@@ -12,16 +12,13 @@ public class Rozchod {
     @Persistent
     private int kwartal;
 
-    public Rozchod(String tytul, int kwota, int kwartal, int rok, Bilans bilans) {
-        this.tytul = tytul;
-        this.kwota = kwota;
-        this.kwartal = kwartal;
-        this.rok = rok;
-        this.bilans = bilans;
-    }
 
     @Persistent
     private int rok;
+
+    @Persistent
+    private Bilans bilans;
+
 
     public String getTytul() {
         return tytul;
@@ -63,36 +60,43 @@ public class Rozchod {
         this.bilans = bilans;
     }
 
-    @Persistent
-    private Bilans bilans;
+    public Rozchod(String tytul, int kwota, int kwartal, int rok, Bilans bilans) {
+        this.tytul = tytul;
+        this.kwota = kwota;
+        this.kwartal = kwartal;
+        this.rok = rok;
+        this.bilans = bilans;
+    }
 
-    public getAllNaprawy(){
+
+    public getAllNaprawy() {
         return pm.getObjects(Naprawa.class)
     }
 
-    public getAllPensje(){
+    public getAllPensje() {
         return pm.getObjects(Pensja.class)
     }
 
-    public getAllUrlopy(){
+    public getAllUrlopy() {
         return pm.getObjects(Urlop.class)
     }
 
-    public obliczKwote(){
-        int kwota=0;
+
+    public obliczKwote() {
+        int kwota = 0;
         for (pm.getObjects(Naprawa.class):naprawa
-             ) {
-            kwota+=naprawa.getKwota();
+             ){
+            kwota += naprawa.getKwota();
         }
 
         for (pm.getObjects(Pensja.class):pensja
-             ) {
-            kwota+=pensja.getKwota();
+             ){
+            kwota += pensja.getKwota();
         }
 
         for (pm.getObjects(Urlop.class):urlop
-             ) {
-            kwota+=urlop.getKwota();
+             ){
+            kwota += urlop.getKwota();
         }
     }
 

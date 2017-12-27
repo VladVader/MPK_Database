@@ -7,14 +7,6 @@ public class Kontroler extends Pracownik {
     @Persistynt(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Key key;
 
-    public Int getNumerTerminaluKontroli() {
-        return numerTerminaluKontroli;
-    }
-
-    public void setNumerTerminaluKontroli(Int numerTerminaluKontroli) {
-        this.numerTerminaluKontroli = numerTerminaluKontroli;
-    }
-
     @Persistent
     private Int numerTerminaluKontroli;
 
@@ -46,6 +38,14 @@ public class Kontroler extends Pracownik {
         this.DataZatrudnienia = DataZatrudnienia;
         this.numerTerminaluKontroli = numerTerminalu;
         this.Status = stattus;
+    }
+
+    public Int getNumerTerminaluKontroli() {
+        return numerTerminaluKontroli;
+    }
+
+    public void setNumerTerminaluKontroli(Int numerTerminaluKontroli) {
+        this.numerTerminaluKontroli = numerTerminaluKontroli;
     }
 
 

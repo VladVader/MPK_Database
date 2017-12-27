@@ -6,15 +6,6 @@ public class Transport {
     @Persistent
     private Int numer;
 
-    public Transport(Int numer, Data rokProdukcji, String producent, Int liczbaMiejsc, String typ, Zajezdnia zajezdnia) {
-        this.numer = numer;
-        this.rokProdukcji = rokProdukcji;
-        this.producent = producent;
-        this.liczbaMiejsc = liczbaMiejsc;
-        this.typ = typ;
-        this.zajezdnia = zajezdnia;
-    }
-
     @Persistent
     private Data rokProdukcji;
 
@@ -24,6 +15,15 @@ public class Transport {
     public Int getNumer() {
         return numer;
     }
+
+    @Persistent
+    private Int liczbaMiejsc;
+
+    @Persistent
+    private String typ;
+
+    @Persistent
+    private Zajezdnia zajezdnia;
 
     public void setNumer(Int numer) {
         this.numer = numer;
@@ -69,26 +69,28 @@ public class Transport {
         this.zajezdnia = zajezdnia;
     }
 
-    @Persistent
-    private Int liczbaMiejsc;
 
-    @Persistent
-    private String typ;
 
-    @Persistent
-    private Zajezdnia zajezdnia;
+    public Transport(Int numer, Data rokProdukcji, String producent, Int liczbaMiejsc, String typ, Zajezdnia zajezdnia) {
+        this.numer = numer;
+        this.rokProdukcji = rokProdukcji;
+        this.producent = producent;
+        this.liczbaMiejsc = liczbaMiejsc;
+        this.typ = typ;
+        this.zajezdnia = zajezdnia;
+    }
 
-    public Transport searchTransport(Int numer){
+    public Transport searchTransport(Int numer) {
         for ((pm.getObjects(Transport.class):transport)
-             ) {
-            if(transport.getNumer()==numer) {
+             ){
+            if (transport.getNumer() == numer) {
                 return transport;
             }
         }
     }
 
 
-    public Boolean deleteTransport(Transport transport){
+    public Boolean deleteTransport(Transport transport) {
         pm.deletePersistent(transport);
     }
 

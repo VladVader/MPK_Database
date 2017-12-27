@@ -7,6 +7,12 @@ public class Zajezdnia {
     @Persistent
     private String nazwa;
 
+    @Persistent
+    private Adres adress;
+
+    @Persistent
+    private String telefon;
+
     public String getNazwa() {
         return nazwa;
     }
@@ -30,12 +36,6 @@ public class Zajezdnia {
     public void setTelefon(String telefon) {
         this.telefon = telefon;
     }
-
-    @Persistent
-    private Adres adress;
-
-    @Persistent
-    private String telefon;
 
 
     public Zajezdnia(Key key, String nazwa, Adres adress, String telefon) {

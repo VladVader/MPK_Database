@@ -1,6 +1,7 @@
 import java.util.Date;
 
 PersistenceCapable
+
 public class Pensja {
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -57,15 +58,16 @@ public class Pensja {
         DataOtrzymania = dataOtrzymania;
     }
 
-  public Int SummaWszystkich(){
-        int sum=0;
-      Pensje[] pensje = pm.getObjects(Pensja.class);
-      for (Pensje:pensja
-           ) {
-          sum+=pensja.getKwota
-      }
-      return sum;
-  }
+    public Int SummaWszystkich() {
+        int sum = 0;
+        Pensje[] pensje = pm.getObjects(Pensja.class);
+        for (Pensje:
+             pensja
+                ) {
+            sum += pensja.getKwota
+        }
+        return sum;
+    }
 
 
 }

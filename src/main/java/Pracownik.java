@@ -16,14 +16,6 @@ public class Pracownik {
     @Persistent
     private String Imie;
 
-    public String getPesel() {
-        return pesel;
-    }
-
-    public void setPesel(String pesel) {
-        this.pesel = pesel;
-    }
-
     @Persistent
     private String pesel;
 
@@ -51,6 +43,14 @@ public class Pracownik {
 
     public String getImie() {
         return Imie;
+    }
+
+    public String getPesel() {
+        return pesel;
+    }
+
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
     }
 
     public void setImie(String Imie) {
@@ -82,9 +82,11 @@ public class Pracownik {
 
     }
 
-    public searchPracownik(String Imie) {
+    public Pracownik searchPracownik(String Imie) {
         Key k = KeyFactory.createKey(Pracownik.class.getSimpleName(), Imie);
-        Pracownik e = pm.getObjectById(Pracownik.class, k);
+        Pracownik p = pm.getObjectById(Pracownik.class, k);
+
+        return p;
     }
 
 }

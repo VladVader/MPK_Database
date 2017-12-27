@@ -3,17 +3,21 @@ public class Urlop {
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Key key;
 
-    public Urlop(Data dataPoczatku, Data dataKonca, Pracownik osobaNaUrlopie, int kwota, Rozchod rozchod) {
-        this.dataPoczatku = dataPoczatku;
-        this.dataKonca = dataKonca;
-        this.osobaNaUrlopie = osobaNaUrlopie;
-        this.kwota = kwota;
-        this.rozchod = rozchod;
-    }
+    @Persistent
+    private Data dataKonca;
 
     @Persistent
+    private Pracownik osobaNaUrlopie;
 
+    @Persistent
+    private int kwota;
+
+    @Persistent
+    private Rozchod rozchod;
+
+    @Persistent
     private Data dataPoczatku;
+
 
     public Data getDataPoczatku() {
         return dataPoczatku;
@@ -55,29 +59,26 @@ public class Urlop {
         this.rozchod = rozchod;
     }
 
-    @Persistent
-    private Data dataKonca;
+    public Urlop(Data dataPoczatku, Data dataKonca, Pracownik osobaNaUrlopie, int kwota, Rozchod rozchod) {
+        this.dataPoczatku = dataPoczatku;
+        this.dataKonca = dataKonca;
+        this.osobaNaUrlopie = osobaNaUrlopie;
+        this.kwota = kwota;
+        this.rozchod = rozchod;
+    }
 
-    @Persistent
-    private Pracownik osobaNaUrlopie;
 
-    @Persistent
-    private int kwota;
+    public Urlopy[] getUrlopyPracownika(Pracownik pracownik) {
+        Urlop[] urlopyPracownika;
 
-    @Persistent
-    private Rozchod rozchod;
+        for ((pm.getObjects(Urlopy.class)):urlop
+            ){
+            if (urlop.getOsobaNaUrlopie().pesel == pracownik.getPesel()) {
+                urlopyPracownika.add(urlop)
+            }
+        }
 
-   public Urlopy[] getUrlopyPracownika(Pracownik pracownik){
-       Urlop[] urlopyPracownika;
-
-       for ((pm.getObjects(Urlopy.class)):urlop
-            ) {
-           if(urlop.getOsobaNaUrlopie().pesel==pracownik.getPesel()){
-               urlopyPracownika.add(urlop)
-           }
-       }
-
-       return urlopyPracownika;
-   }
+        return urlopyPracownika;
+    }
 
 }

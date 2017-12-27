@@ -68,24 +68,26 @@ public class Bilans {
         this.kwota = kwota;
     }
 
-    public int obliczBilans(){
-        kwotaBilansu=0;
-        Przychod [] przychody = pm.getObjects(Przychod.class);
-        Rozchody [] rozchody = pm.getObjects(Rozchod.class);
+    public int obliczBilans() {
+        kwotaBilansu = 0;
+        Przychod[] przychody = pm.getObjects(Przychod.class);
+        Rozchody[] rozchody = pm.getObjects(Rozchod.class);
 
-        for (przychody:przychod) {
-            kwotaBilansu+=przychod.getKwota();
+        for (przychody:
+             przychod) {
+            kwotaBilansu += przychod.getKwota();
         }
 
-        for (rozchody:rozchod) {
-            kwotaBilansu-=rozchod.getKwota();
+        for (rozchody:
+             rozchod) {
+            kwotaBilansu -= rozchod.getKwota();
         }
 
         return kwotaBilansu;
     }
 
-    public Bilans[] getAllBilansy(){
-        Bilansy [] bilansy = pm.getObjects(Bilans.class);
+    public Bilans[] getAllBilansy() {
+        Bilansy[] bilansy = pm.getObjects(Bilans.class);
         return bilansy;
     }
 }
