@@ -1,5 +1,7 @@
 import java.util.Date;
 
+
+@Entity
 @PersistenceCapable
 public class Kontroler extends Pracownik {
 

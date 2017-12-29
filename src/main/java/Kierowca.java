@@ -1,5 +1,5 @@
 
-
+@Entity
 @PersistenceCapable
 public class Kierowca extends Pracownik {
 
