@@ -1,3 +1,7 @@
+
+
+
+@Entity
 public class Rozchod {
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)

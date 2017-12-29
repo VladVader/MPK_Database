@@ -58,10 +58,9 @@ public class Mandat {
         this.kwota = kwota;
     }
 
-    public Mandat[] getAllMandats(){
+    public Mandat[] getAllMandats() {
         return pm.getObjects(Mandat.class);
     }
-
 
 
 }

@@ -1,7 +1,6 @@
 import java.util.Date;
 
 
-
 @Entity
 @PersistenceCapable
 public class Bilans {

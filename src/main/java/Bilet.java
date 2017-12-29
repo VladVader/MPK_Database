@@ -96,8 +96,8 @@ public class Bilet {
     }
 
 
-    public int getSum(){
-        int kwota=0;
+    public int getSum() {
+        int kwota = 0;
         for (pm.getObjects(Bilet.class):bilet
              ){
             kwota += bilet.getCena();

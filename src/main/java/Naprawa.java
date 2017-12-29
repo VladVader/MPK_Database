@@ -1,5 +1,7 @@
 import java.util.Date;
 
+
+@Entity
 public class Naprawa {
 
     @PrimaryKey

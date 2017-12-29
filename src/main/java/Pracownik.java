@@ -7,6 +7,8 @@ import javax.jdo.annotations.PrimaryKey;
 import java.security.KeyFactory;
 import java.util.Date;
 
+
+@Entity
 @PersistenceCapable
 public class Pracownik {
     @PrimaryKey

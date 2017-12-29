@@ -1,5 +1,7 @@
 import java.util.Set;
 
+
+@Entity
 public class Przystanek {
     @PrimaryKey
     @Persistynt(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -56,12 +58,12 @@ public class Przystanek {
         this.aktywny = aktywny;
     }
 
-    public Trasa[] getTrasyWhereUse(){
-        Trasa [] trasy;
+    public Trasa[] getTrasyWhereUse() {
+        Trasa[] trasy;
 
         for ((pm.getObjects(Trasa.class)):trasa
-             ) {
-            if(trasa.getPrzystanki().contains(this.Przystanek)){
+             ){
+            if (trasa.getPrzystanki().contains(this.Przystanek)) {
                 trasy.add(trasa)
             }
         }

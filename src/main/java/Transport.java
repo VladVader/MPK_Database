@@ -1,3 +1,5 @@
+
+@Entity
 public class Transport {
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -68,7 +70,6 @@ public class Transport {
     public void setZajezdnia(Zajezdnia zajezdnia) {
         this.zajezdnia = zajezdnia;
     }
-
 
 
     public Transport(Int numer, Data rokProdukcji, String producent, Int liczbaMiejsc, String typ, Zajezdnia zajezdnia) {

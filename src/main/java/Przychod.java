@@ -1,3 +1,7 @@
+
+
+
+@Entity
 public class Przychod {
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)

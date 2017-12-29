@@ -1,5 +1,7 @@
 import java.util.Date;
 
+
+@Entity
 public class Biletomat {
 
     @PrimaryKey
@@ -57,11 +59,11 @@ public class Biletomat {
         this.model = model;
     }
 
-    public Bilet[] getAllsaledBilets(){
-        Bilet [] bilety;
+    public Bilet[] getAllsaledBilets() {
+        Bilet[] bilety;
         for ((pm.getObjects(Bilet.class)):bilet
-             ) {
-            if(bilet.getBiletomat()=this.Biletomat){
+             ){
+            if (bilet.getBiletomat() = this.Biletomat) {
                 bilety.add(bilet)
             }
         }

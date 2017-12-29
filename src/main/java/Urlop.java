@@ -1,3 +1,5 @@
+
+@Entity
 public class Urlop {
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)

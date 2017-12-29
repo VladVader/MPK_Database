@@ -1,3 +1,5 @@
+
+@Entity
 public class Zajezdnia {
 
     @PrimaryKey
@@ -45,12 +47,12 @@ public class Zajezdnia {
         this.telefon = telefon;
     }
 
-    public getTransportyZajezdni(){
-        Transporty [] transporty;
+    public getTransportyZajezdni() {
+        Transporty[] transporty;
 
         for ((pm.getObjects(Transport.class)):transport
-             ) {
-            if(transport.getZajezdnia().getNazwa()=this.nazwa){
+             ){
+            if (transport.getZajezdnia().getNazwa() = this.nazwa) {
                 transporty.add(transport)
             }
         }
@@ -59,7 +61,7 @@ public class Zajezdnia {
     }
 
 
-    public deleteFromZajezdnia(Transport transport){
-        transport.setZajednia=null;
+    public deleteFromZajezdnia(Transport transport) {
+        transport.setZajednia = null;
     }
 }
