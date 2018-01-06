@@ -1,3 +1,4 @@
+import java.sql.Time;
 import java.util.Date;
 
 @Entity
@@ -104,6 +105,17 @@ public class Bilet {
         }
 
         return kwota;
+    }
+
+    public Bilet[] getAktywne() {
+        Bilet [] bilety=[];
+        for (pm.getObjects(Bilet.class):bilet
+             ){
+            if(bilet.getWaznyDo()< Time);
+            bilety.add(bilet);
+        }
+
+        return bilety;
     }
 
 }
