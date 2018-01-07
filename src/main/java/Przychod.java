@@ -92,7 +92,7 @@ public class Przychod {
             kwota += mandat.getKwota();
         }
 
-        return kwota;
+        this.kwota=kwota;
     }
 
 

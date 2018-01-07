@@ -1,6 +1,4 @@
 
-
-
 @Entity
 public class Rozchod {
     @PrimaryKey
@@ -102,7 +100,8 @@ public class Rozchod {
              ){
             kwota += urlop.getKwota();
         }
+        this.kwota=kwota;
     }
 
-    return kwota;
+
 }

@@ -3,7 +3,6 @@ import java.util.Date;
 
 @Entity
 PersistenceCapable
-
 public class Pensja {
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)

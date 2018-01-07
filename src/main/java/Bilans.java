@@ -70,7 +70,7 @@ public class Bilans {
         this.kwota = kwota;
     }
 
-    public int obliczBilans() {
+    public void obliczBilans() {
         kwotaBilansu = 0;
         Przychod[] przychody = pm.getObjects(Przychod.class);
         Rozchody[] rozchody = pm.getObjects(Rozchod.class);
@@ -85,7 +85,7 @@ public class Bilans {
             kwotaBilansu -= rozchod.getKwota();
         }
 
-        return kwotaBilansu;
+       this.kwota=kwotaBilansu;
     }
 
     public Bilans[] getAllBilansy() {
