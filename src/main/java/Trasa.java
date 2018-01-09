@@ -74,4 +74,16 @@ public class Trasa {
         return this.przystankiTrasy.contains(przystanek);
     }
 
+    public Time getCzasOdjazduPrzystanku(String nazwa){
+        int numer=this.przystankiTrasy.indexOf(nazwa);
+       return this.czasyOdjazdow.get(numer);
+    }
+    public Time getCzasPrzyjazduPrzystanku(String nazwa){
+        int numer=this.przystankiTrasy.indexOf(nazwa);
+        return this.czasyPrzyjazdow.get(numer);
+    }
+    public Time getCzasDoNastepnego(String nazwa){
+        int numer=this.przystankiTrasy.indexOf(nazwa);
+        return this.odstepyCzasowe.get(numer);
+    }
 }
