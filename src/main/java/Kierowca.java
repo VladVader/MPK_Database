@@ -10,9 +10,42 @@ public class Kierowca extends Pracownik {
     @Persistent
     private Set[] kategorie;
 
+    public Set[] getKursyKierowcy() {
+        return kursyKierowcy;
+    }
+
+    public void setKursyKierowcy(Set[] kursyKierowcy) {
+        if(kursyKierowcy !-null && kursyKierowcy.length >0)this.kursyKierowcy = kursyKierowcy;
+    }
+
+    @Persistent
+    private Set[]kursyKierowcy;
+
+    @Persistent
+    private String grafik;
+
+    public Set[] getKategorie() {
+        return kategorie;
+    }
+
+    public void setKategorie(Set[] kategorie) {
+        if (kategorie != null) this.kategorie = kategorie;
+    }
+
+    public int getCzasPracy() {
+        return czasPracy;
+    }
+
+    public void setCzasPracy(int czasPracy) {
+        if (czasPracy >= 0) this.czasPracy = czasPracy;
+    }
+
+    @Persistent
+    private int czasPracy;
+
     @Override
     public Key getKey() {
-        return key;
+        if (key != null) return key;
     }
 
     public void setKey(Key key) {
@@ -24,8 +57,9 @@ public class Kierowca extends Pracownik {
     }
 
     public void setStatus(Boolean status) {
-        Status = status;
+        if (status.getClass() == boolean)Status = status;
     }
+
 
     @Persistent
     private Boolean Status;
@@ -43,6 +77,18 @@ public class Kierowca extends Pracownik {
 
     public Set[] getKategorieKierowcy() {
         return this.kategorie;
+    }
+
+    public int obliczWyplate() {
+        if(this.czasPracy>=0) {
+            return (this.czasPracy * 20);
+        }
+    }
+
+    public void przygotujGrafik(){
+        if(this.czasPracy <160){
+            grafik.add(kursyKierowcy)
+        }
     }
 
 

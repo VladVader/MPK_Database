@@ -12,6 +12,13 @@ public class Kontroler extends Pracownik {
     @Persistent
     private Int numerTerminaluKontroli;
 
+    public Int getWyplata() {
+        return wyplata;
+    }
+
+    @Persistent
+    private Int wyplata=3000;
+
     @Override
     public Key getKey() {
         return key;

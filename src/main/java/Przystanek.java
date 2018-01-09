@@ -16,6 +16,17 @@ public class Przystanek {
     @Persistent
     private String rodzaj;
 
+    public Biletomat getBiletomat() {
+        return biletomat;
+    }
+
+    public void setBiletomat(Biletomat biletomat) {
+       if(biletomat != null) this.biletomat = biletomat;
+    }
+
+    @Persistent
+    private Biletomat biletomat;
+
     @Persistent
     private boolean aktywny;
 

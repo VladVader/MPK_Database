@@ -14,12 +14,26 @@ public class Transport {
     @Persistent
     private String producent;
 
+    @Persistent
+    private Naprawa[] naprawTransportu;
+
     public Int getNumer() {
         return numer;
     }
 
     @Persistent
     private Int liczbaMiejsc;
+
+    public Transport[] getKursyTransportu() {
+        return kursyTransportu;
+    }
+
+    public void setKursyTransportu(Transport[] kursyTransportu) {
+        if(kursyTransportu.length>0) this.kursyTransportu = kursyTransportu;
+    }
+
+    @Persistent
+    private Transport[] kursyTransportu;
 
     @Persistent
     private String typ;
@@ -28,7 +42,15 @@ public class Transport {
     private Zajezdnia zajezdnia;
 
     public void setNumer(Int numer) {
-        this.numer = numer;
+        if(numer != null)this.numer = numer;
+    }
+
+    public Naprawa[] getNaprawTransportu() {
+        return naprawTransportu;
+    }
+
+    public void setNaprawTransportu(Naprawa[] naprawTransportu) {
+       if(naprawTransportu != null && naprawTransportu.length >0) this.naprawTransportu = naprawTransportu;
     }
 
     public Data getRokProdukcji() {
@@ -36,7 +58,7 @@ public class Transport {
     }
 
     public void setRokProdukcji(Data rokProdukcji) {
-        this.rokProdukcji = rokProdukcji;
+        if(rokProdukcji>1995)this.rokProdukcji = rokProdukcji;
     }
 
     public String getProducent() {
@@ -44,7 +66,7 @@ public class Transport {
     }
 
     public void setProducent(String producent) {
-        this.producent = producent;
+        if(producent !=null)this.producent = producent;
     }
 
     public Int getLiczbaMiejsc() {
@@ -52,7 +74,7 @@ public class Transport {
     }
 
     public void setLiczbaMiejsc(Int liczbaMiejsc) {
-        this.liczbaMiejsc = liczbaMiejsc;
+        if(liczbaMiejsc >0)this.liczbaMiejsc = liczbaMiejsc;
     }
 
     public String getTyp() {
@@ -60,7 +82,7 @@ public class Transport {
     }
 
     public void setTyp(String typ) {
-        this.typ = typ;
+        if(typ != null)this.typ = typ;
     }
 
     public Zajezdnia getZajezdnia() {
@@ -68,7 +90,7 @@ public class Transport {
     }
 
     public void setZajezdnia(Zajezdnia zajezdnia) {
-        this.zajezdnia = zajezdnia;
+        if(zajezdnia != null)this.zajezdnia = zajezdnia;
     }
 
 
