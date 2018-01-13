@@ -11,6 +11,7 @@ public class Biletomat {
     @Persistent
     private Date dataMontazu;
 
+    @ForeignKey
     @Persistent
     private Przystanek Przystanek_montazu;
 
@@ -32,7 +33,7 @@ public class Biletomat {
     }
 
     public void setDataMontazu(Date dataMontazu) {
-        this.dataMontazu = dataMontazu;
+        if(this.date>=01.01.1995)this.dataMontazu = dataMontazu;
     }
 
     public Przystanek getPrzystanek_montazu() {
@@ -40,7 +41,9 @@ public class Biletomat {
     }
 
     public void setPrzystanek_montazu(Przystanek przystanek_montazu) {
-        Przystanek_montazu = przystanek_montazu;
+        if(przystanek_montazu != null){
+            Przystanek_montazu = przystanek_montazu;
+        }
     }
 
     public boolean isSparwny() {
@@ -67,7 +70,6 @@ public class Biletomat {
                 bilety.add(bilet)
             }
         }
-
         return bilety;
     }
 }

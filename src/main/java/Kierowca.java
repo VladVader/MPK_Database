@@ -7,10 +7,12 @@ public class Kierowca extends Pracownik {
     @Persistynt(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Key key;
 
-    @Persistent
-    private Set[] kategorie;
 
-    public Set[] getKursyKierowcy() {
+    @Persistent
+    private String[] kategorie;
+
+
+    public Kurs[] getKursyKierowcy() {
         return kursyKierowcy;
     }
 
@@ -19,7 +21,9 @@ public class Kierowca extends Pracownik {
     }
 
     @Persistent
-    private Set[]kursyKierowcy;
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
+    private Kurs[]kursyKierowcy;
 
     @Persistent
     private String grafik;
@@ -91,5 +95,11 @@ public class Kierowca extends Pracownik {
         }
     }
 
+
+    public void addKurs(Kurs){
+        if(this.czasPracy<160){
+            kursyKierowcy.add(Kurs)
+        }
+    }
 
 }

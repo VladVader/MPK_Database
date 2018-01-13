@@ -8,12 +8,16 @@ public class Urlop {
     @Persistent
     private Data dataKonca;
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
     private Pracownik osobaNaUrlopie;
 
     @Persistent
     private int kwota;
 
+
+    @ForeignKey
     @Persistent
     private Rozchod rozchod;
 

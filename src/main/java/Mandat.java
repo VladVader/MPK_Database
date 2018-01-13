@@ -12,7 +12,8 @@ public class Mandat {
     @Persistent
     private boolean zaplacony;
 
-
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
     private Przychod przychod;
 
@@ -47,7 +48,9 @@ public class Mandat {
     }
 
     public void setPrzychod(Przychod przychod) {
-        this.przychod = przychod;
+        if(przychod != null){
+            this.przychod = przychod;
+        }
     }
 
     public int getKwota() {
@@ -55,7 +58,11 @@ public class Mandat {
     }
 
     public void setKwota(int kwota) {
-        this.kwota = kwota;
+
+        if(kwota>0){
+            this.kwota = kwota;
+        }
+
     }
 
     public Mandat[] getAllMandats() {

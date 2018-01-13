@@ -20,9 +20,13 @@ public class Naprawa {
     @Persistent
     private int kwotaNaprawy;
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
     private Transport naprawionyTransport;
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
     private Rozchod rozchod;
 
@@ -40,7 +44,10 @@ public class Naprawa {
     }
 
     public void setDataNaprawy(Date dataNaprawy) {
-        this.dataNaprawy = dataNaprawy;
+        if(dataNaprawy > 01.01.1995){
+            this.dataNaprawy = dataNaprawy;
+        }
+
     }
 
     public Boolean getPlanowana() {
@@ -64,7 +71,10 @@ public class Naprawa {
     }
 
     public void setKwotaNaprawy(int kwotaNaprawy) {
-        this.kwotaNaprawy = kwotaNaprawy;
+        if(kwotaNaprawy >0){
+            this.kwotaNaprawy = kwotaNaprawy;
+        }
+
     }
 
     public Transport getNaprawionyTransport() {

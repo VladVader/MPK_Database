@@ -11,9 +11,13 @@ public class Pensja {
     @Persistent
     private Int kwota;
 
+
+    @ForeignKey
     @Persistent
     private Pracownik osobaOtrzynujaca;
 
+
+    @ForeignKey
     @Persistent
     private Rozchod rozchod;
 

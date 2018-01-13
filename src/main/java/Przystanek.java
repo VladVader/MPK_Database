@@ -24,6 +24,8 @@ public class Przystanek {
        if(biletomat != null) this.biletomat = biletomat;
     }
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
     private Biletomat biletomat;
 

@@ -14,6 +14,8 @@ public class Transport {
     @Persistent
     private String producent;
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
     private Naprawa[] naprawTransportu;
 
@@ -32,12 +34,16 @@ public class Transport {
         if(kursyTransportu.length>0) this.kursyTransportu = kursyTransportu;
     }
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
-    private Transport[] kursyTransportu;
+    private Kurs[] kursyTransportu;
 
     @Persistent
     private String typ;
 
+
+    @ForeignKey
     @Persistent
     private Zajezdnia zajezdnia;
 

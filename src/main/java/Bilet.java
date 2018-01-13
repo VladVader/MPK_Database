@@ -25,9 +25,11 @@ public class Bilet {
 
 
     @Persistent
+    @ForeignKey
     private Przychod przychod;
 
     @Persistent
+    @ForeignKey
     private Biletomat biletomat;
 
     public Bilet(String rodzaj, Boolean ulga, boolean zaplacony, int cena, Date waznyDo, Przychod przychod, Biletomat biletomat) {
@@ -53,7 +55,9 @@ public class Bilet {
     }
 
     public void setUlga(Boolean ulga) {
-        this.ulga = ulga;
+        if(ulga<100) {
+            this.ulga = ulga;
+        }
     }
 
     public boolean isZaplacony() {
@@ -69,7 +73,9 @@ public class Bilet {
     }
 
     public void setCena(int cena) {
-        this.cena = cena;
+        if(cena>0){
+            this.cena=cena;
+        }
     }
 
     public Date getWaznyDo() {
@@ -77,7 +83,9 @@ public class Bilet {
     }
 
     public void setWaznyDo(Date waznyDo) {
-        this.waznyDo = waznyDo;
+        if(waznyDo>= currentDate){
+            this.waznyDo = waznyDo;
+        }
     }
 
     public Przychod getPrzychod() {

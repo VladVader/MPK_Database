@@ -8,12 +8,17 @@ public class Kurs {
     @Persistynt(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Key key;
 
+    @ForeignKey
     @Persistent
     private Trasa trasaKursu;
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
     private Kierowca kierowcaKursu;
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
     private Transport transportKursu;
 
@@ -34,15 +39,20 @@ public class Kurs {
     }
 
     public void setTrasaKursu(Trasa trasaKursu) {
-        this.trasaKursu = trasaKursu;
+        if(trasaKursu !=null){
+            this.trasaKursu = trasaKursu;
+        }
     }
 
     public Kierowca getKierowcaKursu() {
         return kierowcaKursu;
     }
 
-    public void setKierowcaKursu(Kierowca kierowcaKursu) {
-        this.kierowcaKursu = kierowcaKursu;
+    public void setKierowcaKursu(Kierowca kierowcaKursu)
+    {
+        if(kierowcaKursu =! null){
+            this.kierowcaKursu = kierowcaKursu;
+        }
     }
 
     public Transport getTransportKursu() {
@@ -50,7 +60,10 @@ public class Kurs {
     }
 
     public void setTransportKursu(Transport transportKursu) {
-        this.transportKursu = transportKursu;
+
+        if(transportKursu != null){
+            this.transportKursu = transportKursu;
+        }
     }
 
     public Time getCzasPoczatku() {
@@ -58,6 +71,7 @@ public class Kurs {
     }
 
     public void setCzasPoczatku(Time czasPoczatku) {
+
         this.czasPoczatku = czasPoczatku;
     }
 

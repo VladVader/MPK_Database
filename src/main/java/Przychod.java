@@ -20,6 +20,8 @@ public class Przychod {
     @Persistent
     private int rok;
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
     private Bilans bilans;
 

@@ -10,6 +10,8 @@ public class Trasa {
     @Persistent
     private String nazwa;
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
     private ArrayList<Przystanek> przystankiTrasy;
 

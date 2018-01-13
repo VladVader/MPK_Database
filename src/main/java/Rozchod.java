@@ -18,6 +18,8 @@ public class Rozchod {
     @Persistent
     private int rok;
 
+
+    @ForeignKey
     @Persistent
     private Bilans bilans;
 

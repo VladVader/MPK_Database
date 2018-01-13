@@ -28,7 +28,7 @@ public class Bilans {
     }
 
     public void setKwartal(int kwartal) {
-        this.kwartal = kwartal;
+       if(kwartak<5) this.kwartal = kwartal;
     }
 
     public int getRok() {
@@ -36,7 +36,7 @@ public class Bilans {
     }
 
     public void setRok(int rok) {
-        this.rok = rok;
+        if(rok>1995)this.rok = rok;
     }
 
     public Boolean getRozliczenie() {
@@ -44,7 +44,7 @@ public class Bilans {
     }
 
     public void setRozliczenie(Boolean rozliczenie) {
-        this.rozliczenie = rozliczenie;
+        if(rozliczenie !=null)this.rozliczenie = rozliczenie;
     }
 
     public int getKwota() {
@@ -52,7 +52,7 @@ public class Bilans {
     }
 
     public void setKwota(int kwota) {
-        this.kwota = kwota;
+        if(kwota>0)this.kwota = kwota;
     }
 
     @Persistent
