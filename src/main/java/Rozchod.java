@@ -29,7 +29,8 @@ public class Rozchod {
     }
 
     public void setTytul(String tytul) {
-        this.tytul = tytul;
+
+        if(tytul != null)this.tytul = tytul;
     }
 
     public int getKwota() {
@@ -37,7 +38,8 @@ public class Rozchod {
     }
 
     public void setKwota(int kwota) {
-        this.kwota = kwota;
+
+        if(kwota>0)this.kwota = kwota;
     }
 
     public int getKwartal() {
@@ -45,7 +47,8 @@ public class Rozchod {
     }
 
     public void setKwartal(int kwartal) {
-        this.kwartal = kwartal;
+
+        if(kwartal<5)this.kwartal = kwartal;
     }
 
     public int getRok() {
@@ -53,7 +56,8 @@ public class Rozchod {
     }
 
     public void setRok(int rok) {
-        this.rok = rok;
+
+        if(rok>1995)this.rok = rok;
     }
 
     public Bilans getBilans() {
@@ -61,7 +65,8 @@ public class Rozchod {
     }
 
     public void setBilans(Bilans bilans) {
-        this.bilans = bilans;
+
+        if (bilans !=mull)this.bilans = bilans;
     }
 
     public Rozchod(String tytul, int kwota, int kwartal, int rok, Bilans bilans) {

@@ -52,7 +52,9 @@ public class Pracownik {
     }
 
     public void setPesel(String pesel) {
-        this.pesel = pesel;
+        if(pesel.length()=11){
+            this.pesel = pesel;
+        }
     }
 
     public void setImie(String Imie) {
@@ -72,7 +74,9 @@ public class Pracownik {
     }
 
     public void setDataUrodzenia(Date DataUrodzenia) {
-        this.DataUrodzenia = DataUrodzenia;
+        if(getDataUrodzenia()<dataZatrudnienia){
+            this.DataUrodzenia = DataUrodzenia;
+        }
     }
 
     public addPracoenik(String Imie, String Nazwisko, Date DataUrodzenia, Date DataZatrudnienia) {

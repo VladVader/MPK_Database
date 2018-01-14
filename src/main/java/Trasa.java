@@ -1,3 +1,4 @@
+import java.sql.Time;
 import java.util.ArrayList;
 
 
@@ -37,7 +38,8 @@ public class Trasa {
     }
 
     public void setNazwa(String nazwa) {
-        this.nazwa = nazwa;
+
+        if (nazwa != null)this.nazwa = nazwa;
     }
 
     public ArrayList<Przystanek> getPrzystankiTrasy() {
@@ -45,7 +47,8 @@ public class Trasa {
     }
 
     public void setPrzystankiTrasy(ArrayList<Przystanek> przystankiTrasy) {
-        this.przystankiTrasy = przystankiTrasy;
+
+        if (przystankiTrasy !=null)this.przystankiTrasy = przystankiTrasy;
     }
 
     public ArrayList<Time> getOdstepyCzasowe() {
@@ -53,15 +56,17 @@ public class Trasa {
     }
 
     public void setOdstepyCzasowe(ArrayList<Time> odstepyCzasowe) {
-        this.odstepyCzasowe = odstepyCzasowe;
+
+        if (odstepyCzasowe !=null)this.odstepyCzasowe = odstepyCzasowe;
     }
 
     public ArrayList<Time> getCzasyPrzyjazdow() {
         return czasyPrzyjazdow;
     }
 
-    public void setCzasyPrzyjazdow(ArrayList<Time> czasyPrzyjazdow) {
-        this.czasyPrzyjazdow = czasyPrzyjazdow;
+    public void setCzasyPrzyjazdow(ArrayList<Time> czasyPrzyjazdow)
+   {
+       if(czasyPrzyjazdow !=null)this.czasyPrzyjazdow = czasyPrzyjazdow;
     }
 
     public ArrayList<Time> getCzasyOdjazdow() {
@@ -69,7 +74,10 @@ public class Trasa {
     }
 
     public void setCzasyOdjazdow(ArrayList<Time> czasyOdjazdow) {
-        this.czasyOdjazdow = czasyOdjazdow;
+        if(foreac(czasyOdjazdow>czasyPrzyjazdow)){
+            this.czasyOdjazdow = czasyOdjazdow;
+        }
+
     }
 
     public boolean usePrzystanek(Przystanek przystanek) {

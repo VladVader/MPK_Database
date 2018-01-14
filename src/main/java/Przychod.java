@@ -46,7 +46,9 @@ public class Przychod {
     }
 
     public void setKwota(int kwota) {
-        this.kwota = kwota;
+        if(kwota>0){
+            this.kwota = kwota;
+        }
     }
 
     public int getKwartal() {
@@ -54,7 +56,10 @@ public class Przychod {
     }
 
     public void setKwartal(int kwartal) {
-        this.kwartal = kwartal;
+        if(kwartal<5){
+            this.kwartal = kwartal;
+        }
+
     }
 
     public int getRok() {
@@ -70,7 +75,8 @@ public class Przychod {
     }
 
     public void setBilans(Bilans bilans) {
-        this.bilans = bilans;
+
+        if(bilans !=null)this.bilans = bilans;
     }
 
     public getAllBilety() {

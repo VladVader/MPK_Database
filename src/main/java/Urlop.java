@@ -30,7 +30,8 @@ public class Urlop {
     }
 
     public void setDataPoczatku(Data dataPoczatku) {
-        this.dataPoczatku = dataPoczatku;
+
+        if(dataPoczatku<dataKonca)this.dataPoczatku = dataPoczatku;
     }
 
     public Data getDataKonca() {
@@ -38,7 +39,8 @@ public class Urlop {
     }
 
     public void setDataKonca(Data dataKonca) {
-        this.dataKonca = dataKonca;
+
+        if(dataKonca>dataPoczatku)this.dataKonca = dataKonca;
     }
 
     public Pracownik getOsobaNaUrlopie() {
@@ -54,7 +56,8 @@ public class Urlop {
     }
 
     public void setKwota(int kwota) {
-        this.kwota = kwota;
+
+        if (kwota>0)this.kwota = kwota;
     }
 
     public Rozchod getRozchod() {

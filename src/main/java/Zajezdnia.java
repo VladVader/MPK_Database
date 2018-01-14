@@ -20,7 +20,8 @@ public class Zajezdnia {
     }
 
     public void setNazwa(String nazwa) {
-        this.nazwa = nazwa;
+
+        if (nazwa !=null)this.nazwa = nazwa;
     }
 
     public Adres getAdress() {
@@ -36,7 +37,7 @@ public class Zajezdnia {
     }
 
     public void setTelefon(String telefon) {
-        this.telefon = telefon;
+        if (telefon != null)this.telefon = telefon;
     }
 
 

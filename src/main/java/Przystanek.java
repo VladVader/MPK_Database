@@ -44,7 +44,9 @@ public class Przystanek {
     }
 
     public void setNazwa(String nazwa) {
-        this.nazwa = nazwa;
+        if(nazwa != null){
+            this.nazwa = nazwa;
+        }
     }
 
     public String getUlica() {
