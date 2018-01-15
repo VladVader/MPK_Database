@@ -25,7 +25,10 @@ public class Pracownik {
     private String Nazwisko;
 
     @Persistent
-    private DataUrodzenia;
+    private Date DataUrodzenia;
+
+    @Persistent
+    private Set<Urlop> urlpyPracownika;
 
     @Persistent
     private DataZatrudnienia;
@@ -66,7 +69,7 @@ public class Pracownik {
     }
 
     public void setNazwisko(String Nazwisko) {
-        this.Nazwisko = Nazwisko;
+        if(Nazwisko != null)this.Nazwisko = Nazwisko;
     }
 
     public Date getDataUrodzenia() {

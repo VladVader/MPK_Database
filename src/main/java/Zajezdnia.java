@@ -15,6 +15,10 @@ public class Zajezdnia {
     @Persistent
     private String telefon;
 
+    @Persistent
+    private Set<Transport> transportZajezdni;
+
+
     public String getNazwa() {
         return nazwa;
     }

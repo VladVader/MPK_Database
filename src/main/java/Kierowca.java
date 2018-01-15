@@ -1,3 +1,4 @@
+import java.util.Set;
 
 @Entity
 @PersistenceCapable
@@ -7,10 +8,8 @@ public class Kierowca extends Pracownik {
     @Persistynt(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Key key;
 
-
     @Persistent
     private String[] kategorie;
-
 
     public Kurs[] getKursyKierowcy() {
         return kursyKierowcy;
@@ -25,8 +24,10 @@ public class Kierowca extends Pracownik {
     @ForeignKey
     private Kurs[]kursyKierowcy;
 
+    @OneToMany(orphanRemoval=true)
+    @ForeignKey
     @Persistent
-    private String grafik;
+    private Set<Kurs> grafik;
 
     public Set[] getKategorie() {
         return kategorie;
